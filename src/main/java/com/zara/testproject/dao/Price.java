@@ -3,12 +3,9 @@ package com.zara.testproject.dao;
 import java.util.Date;
 import java.util.Objects;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
-
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
@@ -122,9 +119,7 @@ public class Price {
   public boolean equals(Object obj) {
     if (this == obj)
       return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
+    if ((obj == null) || (getClass() != obj.getClass()))
       return false;
     Price other = (Price) obj;
     return Objects.equals(brand_id, other.brand_id) && Objects.equals(curr, other.curr)

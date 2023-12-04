@@ -1,7 +1,6 @@
 package com.zara.testproject.dao;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,10 +19,6 @@ public class PriceController {
   @GetMapping("/Prices")
   Price findQBE(@RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss") Date applyDate,
       @RequestParam Integer productId, @RequestParam Integer brandId) {
-    List<Price> prices = repository.findByDate(applyDate, productId, brandId);
-    if (prices.isEmpty()) {
-      throw new PriceNotFoundException(productId);
-    }
-    return prices.get(0);
+    return repository.findPriceByDate(applyDate, productId, brandId);
   }
 }
