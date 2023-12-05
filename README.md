@@ -43,7 +43,7 @@ Spring Data JPA repositorios son interfaces con métodos que soportan la creaci�
 Spring hace que el acceso a datos sea sencillo, simplemente declarando la siguiente interfaz `PriceRepository`  automáticamente tendremos la posibilidad de 
 
 -   Crear nuevos Prices
--   Actualizar existentens
+-   Actualizar existentes
 -   Borrar Prices
 -   Buscar Prices (uno, todos, o buscar por propiedades simples o complejas)
 
